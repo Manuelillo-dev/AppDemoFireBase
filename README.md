@@ -158,18 +158,4 @@ Esta aplicación está diseñada para satisfacer las necesidades de puntos de ve
 
 ---
 
-## **Contribuciones**
-Si deseas contribuir, por favor sigue estos pasos:
-1. Realiza un fork del repositorio.
-2. Crea una nueva rama (`feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz un commit (`git commit -m "Añadida nueva funcionalidad"`).
-4. Envía un pull request.
-
----
-
-## **Licencia**
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más información.
-
----
-
-¡Gracias por tu interés en nuestro proyecto! 🎉
+¡Esperando sea del agrado proyecto! 🎉
