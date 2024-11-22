@@ -4,7 +4,7 @@
 Esta aplicación está diseñada para satisfacer las necesidades de puntos de venta y comercio electrónico. Está desarrollada con **React Native**, **Firebase** y una arquitectura limpia, enfocándose en la gestión de productos, carrito de compras y autenticación. El objetivo principal es proporcionar una solución eficiente para administrar inventarios, procesar compras y ofrecer roles diferenciados para usuarios administradores y clientes.
 
 ## **Características Principales**
-1. **Autenticación Firebase:
+1. **Autenticación Firebase**:
    - Inicio de sesión y registro de usuarios con correo y contraseña.
    - Roles diferenciados:
      - **Admin**: Gestión completa de productos (CRUD).
