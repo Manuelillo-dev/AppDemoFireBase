@@ -76,14 +76,12 @@ export default function ClientScreen({ navigation }) {
   const handleAddToCart = async (product) => {
     const existingItem = cart.find((item) => item.productId === product.id);
     if (existingItem) {
-      // Incrementar la cantidad en el carrito
       const cartDoc = doc(FIRESTORE_DB, "cart", existingItem.id);
       await updateDoc(cartDoc, {
         quantity: existingItem.quantity + 1,
       });
       fetchCart();
     } else {
-      // Agregar un nuevo producto al carrito
       await addDoc(collection(FIRESTORE_DB, "cart"), {
         productId: product.id,
         name: product.name,
@@ -99,12 +97,10 @@ export default function ClientScreen({ navigation }) {
   const handleRemoveFromCart = async (product) => {
     const existingItem = cart.find((item) => item.productId === product.id);
     if (existingItem.quantity === 1) {
-      // Eliminar el producto del carrito si la cantidad es 1
       const cartDoc = doc(FIRESTORE_DB, "cart", existingItem.id);
       await deleteDoc(cartDoc);
       fetchCart();
     } else {
-      // Decrementar la cantidad
       const cartDoc = doc(FIRESTORE_DB, "cart", existingItem.id);
       await updateDoc(cartDoc, {
         quantity: existingItem.quantity - 1,
@@ -198,32 +194,51 @@ export default function ClientScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: "#f5f5f5" },
-  title: { fontSize: 24, fontWeight: "bold", marginBottom: 20, textAlign: "center" },
+  container: { flex: 1, padding: 20, backgroundColor: "#F7F7F7" },
+  title: {
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#9F2B68",
+    marginBottom: 20,
+    textAlign: "center",
+  },
   product: {
     padding: 15,
     marginBottom: 10,
     borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 5,
-    backgroundColor: "#fff",
+    borderColor: "#C39BD3",
+    borderRadius: 8,
+    backgroundColor: "#F9EBEA",
   },
-  productName: { fontSize: 18, fontWeight: "bold" },
-  productPrice: { fontSize: 16, color: "#555", marginBottom: 10 },
+  productName: {
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#512E5F",
+  },
+  productPrice: {
+    fontSize: 16,
+    color: "#2874A6",
+    marginBottom: 10,
+  },
   button: {
-    backgroundColor: "#007BFF",
+    backgroundColor: "#9B59B6",
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 8,
     alignItems: "center",
+    marginTop: 5,
   },
-  buttonText: { color: "#fff", fontSize: 16 },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "600",
+  },
   cartItem: {
     padding: 15,
     marginBottom: 10,
     borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 5,
-    backgroundColor: "#fff",
+    borderColor: "#C39BD3",
+    borderRadius: 8,
+    backgroundColor: "#F9EBEA",
   },
   cartActions: {
     flexDirection: "row",
@@ -231,27 +246,41 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   cartButton: {
-    backgroundColor: "#007BFF",
+    backgroundColor: "#9B59B6",
     padding: 10,
     borderRadius: 5,
     alignItems: "center",
     width: 40,
   },
-  total: { fontSize: 20, fontWeight: "bold", marginTop: 20, textAlign: "center" },
+  total: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 20,
+    textAlign: "center",
+    color: "#512E5F",
+  },
   clearButton: {
-    backgroundColor: "#FF4500",
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: "#E74C3C",
+    padding: 12,
+    borderRadius: 10,
     alignItems: "center",
     marginTop: 20,
   },
-  clearText: { color: "#fff", fontSize: 16, fontWeight: "bold" },
+  clearText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
   logoutButton: {
-    backgroundColor: "#FF4500",
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: "#6C3483",
+    padding: 15,
+    borderRadius: 10,
     alignItems: "center",
     marginTop: 20,
   },
-  logoutText: { color: "#fff", fontSize: 16, fontWeight: "bold" },
+  logoutText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
 });
