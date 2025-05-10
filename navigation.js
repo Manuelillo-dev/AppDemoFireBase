@@ -1,3 +1,9 @@
+/* # Instalar Firebase */
+/* yarn add firebase */
+
+/* # Expo (opcional, para asegurar de la compatibilidad)
+expo install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated react-native-get-random-values
+ */
 import React, { useEffect, useState } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./screens/LoginScreen";
